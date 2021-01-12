@@ -1,12 +1,30 @@
+/* 
+    Title: cite.css
+    Author: Conner Shockley
+    Date: 1/12/2021
+    Description: CSS styling for the landing page(index.html).
+*/
+
+/*
+    Applies the global font styles
+*/
 body {
     font-family: 'Oswald', Verdana, Arial, sans-serif;
 }
 
-.container {
+/*
+    Styling for the container ID, sets top margin to 50px
+    and the left/right margins to 100px.
+*/
+#container {
     margin-top: 50px;
     margin-left: 100px;
     margin-right: 100px;
 }
+
+/*
+    Styling for h1-h4, sets colors, border, and padding.
+*/
 
 h1, h2, h3, h4 {
     background-color: #3c275a;
@@ -15,25 +33,40 @@ h1, h2, h3, h4 {
     padding: 10px;
 }
 
+/*
+    Styling for anchors, sets color and removes text-decoration.
+*/
 a {
     color: #453674;
     text-decoration: none;
 }
 
+/*
+    Color changes when hovered.
+*/
 a:hover {
     background-color: #d6a800;        
     color: #4f3674;
 }
 
+/*
+    Color changes after visiting.
+*/
 a:visited {
     color: #3c275a;
 }
 
+/*
+    Applies shadow and transition effects to the .card class.
+*/
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
 
+/* 
+    Centers text, changes color, applies font weight and font size to the .card-title. 
+*/
 .card-title {
     text-align: center;
     font-size: 2em;
@@ -41,14 +74,24 @@ a:visited {
     font-weight: 400;
 }
 
+/* 
+    Applies top/bottom padding of 2px and left/right padding of 16px
+*/
 .card-content {
     padding: 2px 16px;
 }
 
+/* 
+    Applies hover affect with shadow to .card.
+*/
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* 
+    Styling for the .btn class, removes border and text-decoration, adds margin and padding,
+    changes font-size, changes color, center aligns, changes display to inline-block, and changes cursor to pointer.
+*/
 .btn {
     border: none;
     text-align: center;
@@ -61,16 +104,27 @@ a:visited {
     color: #000;
 }
 
+/* 
+    Color and background color applied to .btn-primary.
+*/
+
 .btn-primary {
     background-color: #4F3674;
     color: #fff;
 }
 
+/* 
+   Color and background color change when hovered. 
+*/
 .btn-primary:hover {
     background-color: #D6A800;
     color: #4F3674;
 }
 
+/* 
+    Applies padding and margin, display to inline-block, adds border, and 
+    changes box-sizing to border-box.
+*/
 .input {
     padding: 12px 20px;
     margin: 8px 0;
@@ -80,15 +134,24 @@ a:visited {
     box-sizing: border-box;
 }
 
+/* 
+    Adds width of 100% to the .full-width class
+*/
 .full-width {
     width: 100%;
 }
 
+/* 
+    Form styling; changes display to inline-grid and the grid-template-columns to auto.
+*/
 .form {
     display: inline-grid;
     grid-template-columns: auto;
 }
 
+/* 
+    Adds padding of 20px.
+*/
 .form-field {
     padding: 20px;
 }
