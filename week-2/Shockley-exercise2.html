@@ -1,0 +1,52 @@
+<!-- 
+    Title: Shockley-exercise2.html
+    Author: Conner Shockley
+    Date: 1/13/2021
+    Description: The exercise 2 webpage that uses JavaScript to display text, a button, and a link to the web-231 homepage.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+
+     <!-- Head for exercise2 page with links to the course Google fonts -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>WEB 231 - Enterprise Javascript I</title>
+     <link rel="stylesheet" href="../cite.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+ </head>
+ <body>
+     <!-- Div containing all HTML elements in the exercise2.html file -->
+    <div id="container">
+        <h1 class="app-header">Exercise 2.2 - Hello JavaScript</h1>
+        <!-- txtMyWorld displays the text: "You are now in <lastName>'s world!"." -->
+        <p id="txtMyWorld"></p>
+        <!-- Button that alerts you what course you're taking on click. -->
+        <button id="btnMyCourse" onclick = "webCourse()"></button>
+        
+        <br>
+        <!-- Link to return to the WEB-231 landing page -->
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+
+
+    <!-- Adding JavaScript to the Shockley-exercise2.html file. -->
+    <script>
+        // Declaring the lastName variable to be equal to "Shockley".
+        let lastName = "Shockley";
+        // Setting up the getElementById to be equal to "You are now in <lastName>'s world!".
+        document.getElementById("txtMyWorld").innerHTML = "You are now in " + lastName + "'s world!";
+        // Setting up the button that alerts you what course you're taking on click.
+        document.getElementById("btnMyCourse").innerHTML = "What course am I taking?";
+        // Function for the button alert that tells you which course you're taking on click.
+        function webCourse() {
+            alert("WEB 231 – Enterprise JavaScript I");
+        }
+    </script>
+
+
+ </body>
+ </html>
