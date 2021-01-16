@@ -1,0 +1,13 @@
+/* 
+    Title: Shockley-payroll.css
+    Author: Conner Shockley
+    Date: 1/16/2021
+    Description: CSS styling for the Assignment 2.3 page(Shockley-payroll.html).
+*/
+
+/* 
+    Styling that gives unordered lists a red, dotted border of 1 pixel width.
+*/
+ul {
+    border: dotted 1px red;
+}

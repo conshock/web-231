@@ -1,0 +1,121 @@
+<!--
+    Title: Shockley-exercise2.html
+    Author: Conner Shockley
+    Date: 1/16/2021
+    Description: Assignment 2.3's webpage that displays knowledge and proper use of variables in JavaScript.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Head for exercise2 page with links to the course Google fonts, site global styling sheet, and the Shockley-payroll styling sheet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 - Enterprise Javascript I</title>
+    <link rel="stylesheet" href="../cite.css">
+    <link rel="stylesheet" href="Shockley-payroll.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="container">
+        <!-- The heading 1 for Assignment 2.3. -->
+        <h1>Payroll System</h1>
+        <!-- Subheading for employee record 1. -->
+        <h3>Employee record 1</h3>
+            <!-- An unordered list of employee information that is linked to variables in JavaScript. -->
+            <ul>
+                <li id="txtFirstName1"></li>
+                <li id="txtLastName1"></li>
+                <li id="txtAddress1"></li>
+                <li id="txtHireDate1"></li>
+                <li id="txtPayRate1"></li>
+            </ul>
+        <!-- Subheading for employee record 2. -->
+        <h3>Employee record 2</h3>
+            <!-- An unordered list of employee information that is linked to variables in JavaScript. -->
+            <ul>
+                <li id="txtFirstName2"></li>
+                <li id="txtLastName2"></li>
+                <li id="txtAddress2"></li>
+                <li id="txtHireDate2"></li>
+                <li id="txtPayRate2"></li>
+            </ul>
+        <!-- Subheading for employee record 3. -->
+        <h3>Employee record 3</h3>
+            <!-- An unordered list of employee information that is linked to variables in JavaScript. -->
+            <ul>
+                <li id="txtFirstName3"></li>
+                <li id="txtLastName3"></li>
+                <li id="txtAddress3"></li>
+                <li id="txtHireDate3"></li>
+                <li id="txtPayRate3"></li>
+            </ul>
+        <!-- Link to return to the WEB-231 landing page -->
+        <a class="return-home" href="../index.html">Return</a>
+
+    </div>
+
+
+    <!-- Adding JavaScript to the Shockley-payroll.html file. -->
+    <script>
+
+        // Variables for list items found in Employee Record #1: first name, last name, address, hire date, and pay rate.
+        const txtFirstName1 = "Harry";
+        const txtLastName1 = "Potter";
+        const txtAddress1 = "4 Privet Drive";
+        // The let variables below allow the date to be formatted into MM/DD/YYYY.
+        let txtHireDate1 = new Date("1997, 6, 26");
+        let txtNewHireDate1 = txtHireDate1.toLocaleDateString('en-US');
+        const txtPayRate1 = 12.999;
+
+        // Each 'document.getElementById' binds the above variables to the IDs in the HTML file.
+        document.getElementById("txtFirstName1").innerHTML = txtFirstName1;
+        document.getElementById("txtLastName1").innerHTML = txtLastName1;
+        document.getElementById("txtAddress1").innerHTML = txtAddress1;
+        document.getElementById("txtHireDate1").innerHTML = txtNewHireDate1;
+        // The '.toFixed(1)' method forces the number value stored in txtPayRate1 to be to only 1 decimal place.
+        document.getElementById("txtPayRate1").innerHTML = txtPayRate1.toFixed(1);
+
+        // Variables for list items found in Employee Record #2: first name, last name, address, hire date, and pay rate.
+        const txtFirstName2 = "Bilbo";
+        const txtLastName2 = "Baggins";
+        const txtAddress2 = "1 Bagshot Row";
+        // The let variables below allow the date to be formatted into MM/DD/YYYY.
+        let txtHireDate2 = new Date("1931, 9, 31");
+        let txtNewHireDate2 = txtHireDate1.toLocaleDateString('en-US');
+        const txtPayRate2 = 16.678;
+
+        // Each 'document.getElementById' binds the above variables to the IDs in the HTML file.
+        document.getElementById("txtFirstName2").innerHTML = txtFirstName2;
+        document.getElementById("txtLastName2").innerHTML = txtLastName2;
+        document.getElementById("txtAddress2").innerHTML = txtAddress2;
+        // The '.toFixed(1)' method forces the number value stored in txtPayRate1 to be to only 1 decimal place.
+        document.getElementById("txtHireDate2").innerHTML = txtNewHireDate2;
+        document.getElementById("txtPayRate2").innerHTML = txtPayRate2.toFixed(1);
+
+        // Variables for list items found in Employee Record #3: first name, last name, address, hire date, and pay rate.
+        const txtFirstName3 = "Sherlock";
+        const txtLastName3 = "Holmes";
+        const txtAddress3 = "221b Baker Street";
+        // The let variables below allow the date to be formatted into MM/DD/YYYY.
+        let txtHireDate3 = new Date("1892, 10, 14");
+        let txtNewHireDate3 = txtHireDate1.toLocaleDateString('en-US');
+        const txtPayRate3 = 20.92314;
+    
+        // Each 'document.getElementById' binds the above variables to the IDs in the HTML file.
+        document.getElementById("txtFirstName3").innerHTML = txtFirstName3;
+        document.getElementById("txtLastName3").innerHTML = txtLastName3;
+        document.getElementById("txtAddress3").innerHTML = txtAddress3;
+        // The '.toFixed(1)' method forces the number value stored in txtPayRate1 to be to only 1 decimal place.
+        document.getElementById("txtHireDate3").innerHTML = txtNewHireDate3;
+        document.getElementById("txtPayRate3").innerHTML = txtPayRate3.toFixed(1);
+        
+    </script>
+
+
+</body>
+</html>
