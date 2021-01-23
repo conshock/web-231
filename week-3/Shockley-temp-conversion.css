@@ -1,0 +1,7 @@
+/* 
+    Center aligns and increases font-size to 28px of the card-content id.
+*/
+#card-content {
+    text-align: center;
+    font-size: 28px;
+}

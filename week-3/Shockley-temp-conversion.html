@@ -1,0 +1,73 @@
+<!--
+    Title: Shockley-temp-conversion.html
+    Author: Conner Shockley
+    Date: 1/16/2021
+    Description: Webpage that asks user to input a temperature in Fahrenheit and returns the same temperature in Celsius.
+ -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for exercise2 page with links to the course Google fonts, site global styling sheet, and the Shockley-payroll styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../cite.css">
+<link rel="stylesheet" href="Shockley-temp-conversion.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="container">
+        <!-- The heading for the Temperature Conversion webpage. -->
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+        <!-- A card that contains the input field and 'convert temperature' button. -->
+        <div class="card">
+            <!-- Title for the card. -->
+            <div class="card-title">Fahrenheit to Celsius Converter</div>
+                <div class="form">
+                    <label for="txtFahrenheit">Fahrenheit value.</label>
+                    <input type="number" class="input" name="Fahrenheit" id="txtFahrenheit">
+                    <div class="form-field">
+                        <!-- This button allows for the 'tempConversion' function to be registered as an onclick function. -->
+                        <button onclick="tempConversion()" class="btn btn-primary full-width">Convert Temperature</button>
+                    </div>
+            </div>
+        </div>
+
+        <!-- The 2nd card in the page displays the results of the tempConversion function. -->
+        <div class="card">
+            <div class="card-title">Conversion Results.</div>
+                <div id="card-content"></div> 
+        </div>  
+        
+        <!-- Link to return to the WEB-231 landing page -->
+        <a class="return-home" href="../index.html">Return</a>
+        
+    </div>
+
+
+    <!-- Adding JavaScript to the Shockley-temp-conversion.html file. -->
+    <script>
+
+        // Function to convert the Fahrenheit temperature that the user inputs.
+        function tempConversion() {
+            // The fahrenheit variable gets its value from the input field once the user clicks the button. 
+            // The getElementById must be followed by '.value' so that the value is stored as a number instead of text.
+            let fahrenheit = document.getElementById('txtFahrenheit').value;
+
+            // The celsius variable is a product of the temperature conversion formula as well as the 'parseFloat' function.
+            // The celsius variable will always be to the 2nd decimal place.
+            const celsius = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
+            
+            // Finally we display the conversion result in the 'card-content' div.
+            document.getElementById('card-content').innerHTML = celsius;
+        }
+
+    </script>
+
+</body>
+</html>
