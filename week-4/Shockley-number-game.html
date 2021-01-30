@@ -1,0 +1,76 @@
+<!--
+   Title: Shockley-number-game.html
+   Author: Conner Shockley
+   Date: 1/30/2021
+   Description: Webpage that asks user to input a number between 1 and 10 and then returns a result.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for exercise2 page with links to the course Google fonts, site global styling sheet, and the Shockley-payroll styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="Shockley-number-game.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div id="container">
+        <!-- Heading for numbers game webpage. -->
+        <h1 class="app-header">Welcome to the numbers game!</h1>
+        <!-- Card with a card title, input form, and submit button. -->
+        <div class="card">
+            <div class="card-title">Pick a number between 1 and 10</div>
+                <div class="form">
+                    <div class="form-field">
+                        <label for="">Guess the number.</label>
+                        <input type="text" class="input" id="txtMyNumber">
+                    </div>
+                    <!-- This button stores the user inputted number into the 'guessNumber()' function. -->
+                    <div class="form-field">
+                        <button onclick="guessNumber()" class="btn btn-primary full-width" id="btnSubmit">Submit</button>
+                    </div>
+                </div>
+        </div>
+
+        <!-- This card contains the results of the 'guessNumber()' function. -->
+        <div class="card">
+            <div class="card-title">Results</div>
+            <div class="app-header" id="card-content"></div>
+            <!-- Link to return back to the index.html page. -->
+            <a class="return-home" href="../index.html">Return</a>
+        </div>
+    </div>
+
+
+    <!-- Adding JavaScript to the Shockley-temp-conversion.html file. -->
+    <script>
+        // The rnd variable is created upon loading the page.
+        const rnd = Math.floor((Math.random() * 10) + 1);
+
+        // The guessNumber function takes the user-inputted number from the form-field and returns results based upon the value.
+        function guessNumber() {
+            // The myNumber variable gets it's value from the 'txtMyNumber' input field.
+            let myNumber = document.getElementById('txtMyNumber').value;
+
+            // The below if-else statement determines if the user's number is greater than, less than, or equal to the rnd variable.
+            // Once this is determined, the card-content HTML element will return a text string with the result.
+            if (rnd < myNumber) {
+                document.getElementById('card-content').innerHTML = "The number is less than " + myNumber;
+            } else if (rnd > myNumber) {
+                document.getElementById('card-content').innerHTML = "The number is greater than " + myNumber;
+            } else {
+                document.getElementById('card-content').innerHTML = "Congratulations! You picked the correct number!";
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

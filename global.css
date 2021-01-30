@@ -74,6 +74,7 @@ h1 {
     Styling for app-header.
 */
 .app-header {
+    font-size: 28px;
     text-align: center;
 }
 
