@@ -41,6 +41,11 @@ h1 {
     padding: 10px;
 }
 
+#results-container {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
 /* 
     Styling for NavBar.
 */
@@ -208,6 +213,18 @@ footer a:hover {
 }
 
 /* 
+    Styling for dropdown menus.
+*/
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 
     Primary button colors.
 */
 .btn-primary {
@@ -273,6 +290,7 @@ footer a:hover {
 .return-home {
     color: #4f3674;
     text-decoration: none;
+    text-align: center;
 }
 
 /*
