@@ -1,0 +1,182 @@
+<!--
+   Title: Shockley-sequence-game.html
+   Author: Conner Shockley
+   Date: 2/6/2021
+   Description: Webpage that allows user to pick an option of different sequences of numbers and returns a short sequence.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for page with links to the course Google fonts, site global styling sheet, and the Shockley-sequence-game styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="shockley-in-n-out-books.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div id="container">
+        <!-- Heading for In-N-Out-Books webpage. -->
+        <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+        <!-- Card with a card title, input form, and display listing button. -->
+        <div class="card">
+            <div class="card-title">My Favorites</div>
+            
+            <div class="form">
+                <div class="form-field">
+                    <label for="">Choose a listing</label>
+                    <!-- Drop down menu with 3 options; select, top 3 favorite books, and top 3 favorite authors. -->
+                    <select class="drop-down-menu" id="favoriteList">
+                        <option value="select">--Select--</option>
+                        <option value="books">Top 3 Favorite Books</option>
+                        <option value="authors">Top 3 Favorite Authors</option>
+                    </select>
+                </div>
+                
+                <!-- Button that is tied to the listingFunction() function that will unhide the selected table. -->
+                <div class="form-field">
+                    <button onclick="listingFunction()" class="btn btn-primary full-width" id="btnDisplayListing">Display Listing</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Link to return back to the index.html page. -->
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+    
+
+
+    <!-- Container that shows the resulting selected table. -->
+    <div class="results-container">
+        <!-- This is the books-table. -->
+        <div class="card" id="books-table">
+            <div class="card-title">Top 3 Favorite Books</div>
+            <table id="books">
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                </tr>
+                <!-- This tbody has an id of "booksTable" which is tied to a function that creates the table based on page load. -->
+                <tbody id="booksTable">
+            </table>
+        </div>
+
+        <!-- This is the authors-table. -->
+        <div class="card" id="authors-table">
+            <div class="card-title">Top 3 Favorite Authors</div>
+            <table id="authors">
+                <tr>
+                    <th>Name</th>
+                    <th>Genre</th>
+                </tr>
+                <!-- This tbody has an id of "authorsTable" which is tied to a function that creates the table based on page load. -->
+                <tbody id ="authorsTable">
+            </table>
+        </div>
+    </div>
+    
+    
+    <!-- Adding JavaScript to the Shockley-in-n-out-books.html file. -->
+    <script>
+            // This object literal array is what gives the authors-table it's data.
+            let authors = [
+                {
+                    "name": "J.K Rowling", 
+                    "genre": "Fantasy"
+                },
+                {
+                    "name": "J.R.R Tolkien", 
+                    "genre": "Fantasy"
+                },
+                {
+                    "name": "Margaret Atwood", 
+                    "genre": "Fictional drama"
+                }
+            ]
+            
+            // This array gives the books-table it's data.
+            let books = [
+                {
+                    "isbn": "0439136369",
+                    "title": "Harry Potter and the Prisoner of Askaban",
+                    "pages": "448"
+                },
+                {
+                    "isbn": "0547928203",
+                    "title": "The Lord of the Rings: The Two Towers",
+                    "pages": "352"
+                },
+                {
+                    "isbn": "038549081X",
+                    "title": "The Handmaid's Tale",
+                    "pages": "311" 
+                }
+            ]
+
+            // The buildAuthorsTable and buildBooksTable functions build the table based on the above arrays.
+            buildAuthorsTable(authors)
+            buildBooksTable(books)
+
+            function buildAuthorsTable(data){
+                // The table variable generates it's value from the 'authorsTable' HTML element.
+                let table = document.getElementById('authorsTable')
+                // This for loop populates data into the 'authorsTable' table until the data from the 'authors' array is used completely.
+                for (let authors = 0; authors < data.length; authors++){
+                    let row =   `<tr>
+                                    <td>${data[authors].name}</td>
+                                    <td>${data[authors].genre}</td>
+                                </tr>`
+                    // New rows with data are made until the data is used completely.
+                    table.innerHTML += row
+
+
+                }
+            }
+
+            function buildBooksTable(data){
+                // The table variable generates it's value from the 'booksTable' HTML element.
+                let table2 = document.getElementById('booksTable')
+                // This for loop populates data into the 'booksTable' table until the data from the 'authors' array is used completely.
+                for (let books = 0; books < data.length; books++){
+                    let row =   `<tr>
+                                    <td>${data[books].isbn}</td>
+                                    <td>${data[books].title}</td>
+                                    <td>${data[books].pages}</td>
+                                </tr>`
+                    // New rows with data are made until the data is used completely
+                    table2.innerHTML += row
+                }
+            }
+
+            // This function controls which(if any) table is shown based on the drop-down menu selection made by the user.
+            function listingFunction() {
+                // The choice variable gets value from the 'favoriteList' HTML element drop-down menu selection.
+                let choice = document.getElementById("favoriteList").value;
+
+                // The else-if statement below determines which table is displayed based on the drop-down menu selection.
+                // If the user selects books, then only the books table displays.
+                if (choice == "books") {
+                    document.getElementById("authors-table").style.display = "none";
+                    document.getElementById("books-table").style.display = "block";
+                // If the user selects authors, then only the authors table displays.
+                } else if (choice == "authors") {
+                    document.getElementById("authors-table").style.display = "block";
+                    document.getElementById("books-table").style.display = "none";
+                // If the user selects 'select', then no tables will display
+                } else if (choice == "select") {
+                    document.getElementById("books-table").style.display = "none";
+                    document.getElementById("authors-table").style.display = "none";
+                }
+            }
+        
+
+    </script>
+
+</body>
+</html>

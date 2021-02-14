@@ -1,0 +1,82 @@
+#favorite-books {
+    border-collapse: collapse;
+    width: 100%;
+    display: ;
+    margin-bottom: 30px;
+}
+
+/* 
+    Books table header styling.
+*/
+#favorite-books th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#favorite-books td, #favorite-books th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#favorite-books tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+#favorite-authors {
+    border-collapse: collapse;
+    width: 100%;
+    display: ;
+    margin-bottom: 30px;
+}
+/* 
+    Books table header styling.
+*/
+#favorite-authors th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#favorite-authors td, #favorite-authors th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#favorite-authors tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+/* 
+    Display set to none so that the results don't display on page load
+*/
+#books-table {
+    display: none;
+}
+
+/* 
+    Display set to none so that the results don't display on page load
+*/
+#authors-table {
+    display: none;
+}

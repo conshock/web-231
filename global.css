@@ -39,6 +39,8 @@ h1 {
     margin-left: 100px;
     margin-right: 100px;
     padding: 10px;
+    width: 600px;
+    margin: 3% auto 0;
 }
 
 #results-container {
@@ -283,6 +285,40 @@ footer a:hover {
     color: #4F3674;
     cursor: pointer;
 }
+
+#authors {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+/* 
+    Books table header styling.
+*/
+#authors th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#authors td, #authors th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#authors tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
 
 /*
     Styling for the return-home class; applies color and removes text-decoration.
