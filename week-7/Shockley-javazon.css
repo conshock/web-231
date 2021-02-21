@@ -1,0 +1,134 @@
+/* 
+    Title: Shockley-javazon.css
+    Author: Conner Shockley
+    Date: 2/20/2021
+    Description:CSS styling for Assignment 7.2.
+*/
+
+table {
+    width: 100%;
+}
+
+#products {
+    border-collapse: collapse;
+    width: ;
+    display: ;
+    margin-bottom: 30px;
+}
+
+/* 
+    Books table header styling.
+*/
+#products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#products tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+#services {
+    border-collapse: collapse;
+    width: 100%;
+    display: ;
+    margin-bottom: 30px;
+}
+/* 
+    Books table header styling.
+*/
+#services th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#services td, #services th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#services tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+#employees {
+    border-collapse: collapse;
+    width: 100%;
+    display: ;
+    margin-bottom: 30px;
+}
+/* 
+    Books table header styling.
+*/
+#employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+/* 
+    Styling for books table data and additional styling for books table headers. 
+*/
+#employees td, #employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* 
+    Books table rows styling changed when hovered.
+*/
+#employees tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+/* 
+    Display set to none so that the results don't display on page load
+*/
+#products {
+    display: none;
+}
+
+/* 
+    Display set to none so that the results don't display on page load
+*/
+#services {
+    display: none;
+}
+
+/* 
+    Display set to none so that the results don't display on page load
+*/
+#employees {
+    display: none;
+}

@@ -1,0 +1,352 @@
+<!--
+   Title: Shockley-javazon.html
+   Author: Conner Shockley
+   Date: 2/20/2021
+   Description: Webpage that allows user to different tables that are created from JS Objects.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for page with links to the course Google fonts, site global styling sheet, and the Shockley-sequence-game styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="Shockley-javazon.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Javazon App!</h1>
+        <div class="card">
+            <div class="card-title">Javazon Selection Form</div>
+
+            <div class="form">
+                <div class="form-field">
+                    <label for="">Choose a listing</label>
+                    <!-- Drop down menu with 4 options; select, Products, Services and Employees. -->
+                    <select class="drop-down-menu" id="listing">
+                        <option value="select">--Select--</option>
+                        <option value="products">Products</option>
+                        <option value="services">Services</option>
+                        <option value="employees">Employees</option>
+                    </select>
+                </div>
+
+                <!-- Button that is tied to the listingFunction() function that will un-hide the selected table. -->
+                <div class="form-field">
+                    <button onclick="listingFunction()" class="btn btn-primary full-width" id="btnDisplayListing">Display Listing</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Link to return back to the index.html page. -->
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+
+    <!-- Container that shows the resulting selected table. -->
+    <div id="results-container">
+        <!-- This is the Products table. -->
+        <div class="card" id="products">
+            <div class="card-title">Javazon Products</div>
+            <div class="card-content">
+                <table id="products-table">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Value</th>
+                    </tr>
+                    <!-- Each unique ID is bound to JS objects. -->
+                    <tr>
+                        <td id="appleID"></td>
+                        <td id="appleDescription"></td>
+                        <td id="applePrice"></td>
+                        <td id="appleQuantity"></td>
+                        <td id="appleTotal"></td>
+                    </tr>
+                    <tr>
+                        <td id="kiwiID"></td>
+                        <td id="kiwiDescription"></td>
+                        <td id="kiwiPrice"></td>
+                        <td id="kiwiQuantity"></td>
+                        <td id="kiwiTotal"></td>
+                    </tr>
+                    <tr>
+                        <td id="orangeID"></td>
+                        <td id="orangeDescription"></td>
+                        <td id="orangePrice"></td>
+                        <td id="orangeQuantity"></td>
+                        <td id="orangeTotal"></td>
+                    </tr>
+                    <tr>
+                        <td id="mangoID"></td>
+                        <td id="mangoDescription"></td>
+                        <td id="mangoPrice"></td>
+                        <td id="mangoQuantity"></td>
+                        <td id="mangoTotal"></td>
+                    </tr>
+                    <tr>
+                        <td id="limeID"></td>
+                        <td id="limeDescription"></td>
+                        <td id="limePrice"></td>
+                        <td id="limeQuantity"></td>
+                        <td id="limeTotal"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- This is the Services table. -->
+        <div class="card" id="services">
+            <div class="card-title">Javazon Services</div>
+            <div class="card-content">
+                <table id="services-table">
+                    <tr>
+                        <th>Service ID</th>
+                        <th>Description</th>
+                        <th>Hourly Rate</th>
+                        <th>Minimum Billable Hours</th>
+                    </tr>
+                    <!-- Each unique ID is bound to JS objects. -->
+                    <tr>
+                        <td id="trainerID"></td>
+                        <td id="trainerDescription"></td>
+                        <td id="trainerHourly"></td>
+                        <td id="trainerMin"></td>
+                    </tr>
+                    <tr>
+                        <td id="visionID"></td>
+                        <td id="visionDescription"></td>
+                        <td id="visionHourly"></td>
+                        <td id="visionMin"></td>
+                    </tr>
+                    <tr>
+                        <td id="detailID"></td>
+                        <td id="detailDescription"></td>
+                        <td id="detailHourly"></td>
+                        <td id="detailMin"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- This is the Employees table -->
+        <div class="card" id="employees">
+            <div class="card-title">Javazon Employees</div>
+            <div class="card-content">
+                <table id="employees-table">
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Salary</th>
+                    </tr>
+                    <!-- Each unique ID is bound to JS objects. -->
+                    <tr>
+                        <td id="registerID"></td>
+                        <td id="registerLast"></td>
+                        <td id="registerFirst"></td>
+                        <td id="registerSalary"></td>
+                    </tr>
+                    <tr>
+                        <td id="doctorID"></td>
+                        <td id="doctorLast"></td>
+                        <td id="doctorFirst"></td>
+                        <td id="doctorSalary"></td>
+                    </tr>
+                    <tr>
+                        <td id="fitnessID"></td>
+                        <td id="fitnessLast"></td>
+                        <td id="fitnessFirst"></td>
+                        <td id="fitnessSalary"></td>
+                    </tr>
+                    <tr>
+                        <td id="cleanerID"></td>
+                        <td id="cleanerLast"></td>
+                        <td id="cleanerFirst"></td>
+                        <td id="cleanerSalary"></td>
+                    </tr>
+                    <tr>
+                        <td id="ownerID"></td>
+                        <td id="ownerLast"></td>
+                        <td id="ownerFirst"></td>
+                        <td id="ownerSalary"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adding JavaScript to the Shockley-javazon.html file. -->
+    <script>
+        // Product class with id, description, price, and quantity parameters.
+        class Product {
+            constructor (id, description, price, quantity) {
+                this.id = id;
+                this.description = description;
+                this.price = price;
+                this.quantity = quantity;
+            } 
+            get total() {
+                return this.totalValue();
+            }
+            // Function to return the total value(quantity * price).
+            totalValue() {
+                return this.quantity * this.price;
+            }
+        }
+    
+        // Services class with id, description, hourlyRate, and min parameters.
+        class Services {
+            constructor (id, description, hourlyRate, min) {
+                this.id = id;
+                this.description = description;
+                this.hourlyRate = hourlyRate;
+                this.min = min;
+            }
+        }
+
+        // Employee class with id, firstName, lastName, and salary parameters.
+        class Employee {
+            constructor (id, firstName, lastName, salary) {
+                this.id = id;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.salary = salary;
+            }
+        }
+
+        // Creating and binding apple Object to HTML Products table.
+        const apple = new Product(111, "Fruit", 5.99, 10);
+        document.getElementById("appleID").innerHTML = apple.id;
+        document.getElementById("appleDescription").innerHTML = apple.description;
+        document.getElementById("applePrice").innerHTML = apple.price;
+        document.getElementById("appleQuantity").innerHTML = apple.quantity;
+        document.getElementById("appleTotal").innerHTML = apple.total.toFixed(2);
+
+        // Creating and binding kiwi Object to HTML Products table.
+        const kiwi = new Product(222, "Fruit", 2.49, 5);
+        document.getElementById("kiwiID").innerHTML = kiwi.id;
+        document.getElementById("kiwiDescription").innerHTML = kiwi.description;
+        document.getElementById("kiwiPrice").innerHTML = kiwi.price;
+        document.getElementById("kiwiQuantity").innerHTML = kiwi.quantity;
+        document.getElementById("kiwiTotal").innerHTML = kiwi.total.toFixed(2);
+
+        // Creating and binding orange Object to HTML Products table.
+        const orange = new Product(333, "Fruit", 3.19, 4);
+        document.getElementById("orangeID").innerHTML = orange.id;
+        document.getElementById("orangeDescription").innerHTML = orange.description;
+        document.getElementById("orangePrice").innerHTML = orange.price;
+        document.getElementById("orangeQuantity").innerHTML = orange.quantity;
+        document.getElementById("orangeTotal").innerHTML = orange.total.toFixed(2);
+
+        // Creating and binding mango Object to HTML Products table.
+        const mango = new Product(444, "Fruit", 6.25, 3);
+        document.getElementById("mangoID").innerHTML = mango.id;
+        document.getElementById("mangoDescription").innerHTML = mango.description;
+        document.getElementById("mangoPrice").innerHTML = mango.price;
+        document.getElementById("mangoQuantity").innerHTML = mango.quantity;
+        document.getElementById("mangoTotal").innerHTML = mango.total.toFixed(2);
+
+        // Creating and binding lime Object to HTML Products table.
+        const lime = new Product(555, "Fruit", 0.49, 15);
+        document.getElementById("limeID").innerHTML = lime.id;
+        document.getElementById("limeDescription").innerHTML = lime.description;
+        document.getElementById("limePrice").innerHTML = lime.price;
+        document.getElementById("limeQuantity").innerHTML = lime.quantity;
+        document.getElementById("limeTotal").innerHTML = lime.total.toFixed(2);
+        
+
+        // Creating and binding training Object to HTML Services table.
+        const training = new Services(1, "Personal trainer", 60.00, 2);
+        document.getElementById("trainerID").innerHTML = training.id;
+        document.getElementById("trainerDescription").innerHTML = training.description;
+        document.getElementById("trainerHourly").innerHTML = training.hourlyRate;
+        document.getElementById("trainerMin").innerHTML = training.min;
+
+        // Creating and binding vision Object to HTML Services table.
+        const vision = new Services(2, "Eye Doctor", 100.00, 4);
+        document.getElementById("visionID").innerHTML = vision.id;
+        document.getElementById("visionDescription").innerHTML = vision.description;
+        document.getElementById("visionHourly").innerHTML = vision.hourlyRate;
+        document.getElementById("visionMin").innerHTML = vision.min;
+
+        // Creating and binding detail Object to HTML Services table.
+        const detail = new Services(2, "Car detailer", 40.00, 3);
+        document.getElementById("detailID").innerHTML = detail.id;
+        document.getElementById("detailDescription").innerHTML = detail.description;
+        document.getElementById("detailHourly").innerHTML = detail.hourlyRate;
+        document.getElementById("detailMin").innerHTML = detail.min;
+        
+        // Creating and binding register Object to HTML Employees table.
+        const register = new Employee(1, "John", "Smith", 25000);
+        document.getElementById("registerID").innerHTML = register.id;
+        document.getElementById("registerFirst").innerHTML = register.firstName;
+        document.getElementById("registerLast").innerHTML = register.lastName;
+        document.getElementById("registerSalary").innerHTML = register.salary;
+
+        // Creating and binding doctor Object to HTML Employees table.
+        const doctor = new Employee(2, "Mister", "Doctor", 250000);
+        document.getElementById("doctorID").innerHTML = doctor.id;
+        document.getElementById("doctorFirst").innerHTML = doctor.firstName;
+        document.getElementById("doctorLast").innerHTML = doctor.lastName;
+        document.getElementById("doctorSalary").innerHTML = doctor.salary;
+
+        // Creating and binding fitnessTrainer Object to HTML Employees table.
+        const fitnessTrainer = new Employee(3, "Fitness", "Trainer", 60000);
+        document.getElementById("fitnessID").innerHTML = fitnessTrainer.id;
+        document.getElementById("fitnessFirst").innerHTML = fitnessTrainer.firstName;
+        document.getElementById("fitnessLast").innerHTML = fitnessTrainer.lastName;
+        document.getElementById("fitnessSalary").innerHTML = fitnessTrainer.salary;
+
+        // Creating and binding cleaner Object to HTML Employees table.
+        const cleaner = new Employee(4, "Car", "Detailer", 40000);
+        document.getElementById("cleanerID").innerHTML = cleaner.id;
+        document.getElementById("cleanerFirst").innerHTML = cleaner.firstName;
+        document.getElementById("cleanerLast").innerHTML = cleaner.lastName;
+        document.getElementById("cleanerSalary").innerHTML = cleaner.salary;
+
+        // Creating and binding owner Object to HTML Employees table.
+        const owner = new Employee(5, "Business", "Owner", 600000);
+        document.getElementById("ownerID").innerHTML = owner.id;
+        document.getElementById("ownerFirst").innerHTML = owner.firstName;
+        document.getElementById("ownerLast").innerHTML = owner.lastName;
+        document.getElementById("ownerSalary").innerHTML = owner.salary;
+
+        // The listingFunction() allows for the proper table to display based on the user-input. Accomplished through a switch statement.
+        function listingFunction() {
+            let choice = document.getElementById("listing").value;
+            switch (choice) {
+                case "select":
+                    document.getElementById("products").style.display = "none";
+                    document.getElementById("services").style.display = "none";
+                    document.getElementById("employees").style.display = "none";
+                    break;
+                case "products":
+                    document.getElementById("products").style.display = "block";
+                    document.getElementById("services").style.display = "none";
+                    document.getElementById("employees").style.display = "none";
+                    break;
+                case "services":
+                    document.getElementById("products").style.display = "none";
+                    document.getElementById("services").style.display = "block";
+                    document.getElementById("employees").style.display = "none";
+                    break;
+                case "employees":
+                    document.getElementById("products").style.display = "none";
+                    document.getElementById("services").style.display = "none";
+                    document.getElementById("employees").style.display = "block";
+                    break;
+            }
+        }
+
+
+    </script>
+
+</body>
