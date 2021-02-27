@@ -1,0 +1,104 @@
+<!--
+   Title: Shockley-javazon.html
+   Author: Conner Shockley
+   Date: 2/27/2021
+   Description: Webpage for Alphabet game.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for page with links to the course Google fonts, site global styling sheet, and the Shockley-sequence-game styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="Shockley-alphabet-game.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <!-- Title and 1st card which contains the input-field for a user to enter a number. -->
+    <div id="container">
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+        <div class="card">
+            <div class="card-title">Alphabet Number Form.</div>
+            <div class="form">
+                <div class="form-field">
+                    <label for="">Alphabet Letter Position</label>
+                    <!-- The value is stored in the pos variable via the txtPosition ID. -->
+                    <input type="text" class="input" id="txtPosition">
+                </div>
+                <div class="form-field">
+                    <!-- Once this button is clicked the user value is stored in the pos variable. -->
+                    <button onclick="btnFindLetter()" class="btn btn-primary full-width" id="btnFindLetter">Find Letter</button>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <!-- Link to return back to the index.html page. -->
+        <a class="return-home" href="../index.html">Return</a>
+    </div>
+
+    <!-- Container which displays all letters in the alphabet and will display the results of the user's value. -->
+    <div class="results-container">
+        <div class="card">
+            <div class="card-title">Letters in the alphabet.</div>
+                <div class="card-content" id="alphabet"></div>
+        </div>
+        <!-- The results card is initially hidden, but once a value is added and the user 
+             clicks the button, the card's display changes to block. -->
+        <div class="card">
+            <div class="card-title" id="results">Results</div>
+                <div class="card-content" id="alphabet-letter"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Adding JavaScript to the Shockley-javazon.html file. -->
+    <script>
+        
+        // Alphabet is the character array for the alphabet
+        let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K","L", "M", 
+                          "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        // alphabetOutput sets up the for/in loop to be able to output into a string.
+        let alphabetOutput = "";
+        let key;
+
+        // The for/in loop creates a string from the above alphabet array.
+        for (key in alphabet) {
+            alphabetOutput += alphabet[key] + ', ';
+        }
+        // Here we print the string into the 'alphabet' div and use .slice to remove the last space and comma.
+        document.getElementById('alphabet').innerHTML = alphabetOutput.slice(0, -2);
+
+        
+       // This function determines what letter to show based off the value inputted by the user.
+        function btnFindLetter() {
+            // pos is the number inputted by the user.
+            let pos = document.getElementById("txtPosition").value;
+            // newOutput removes the spaces and commas from the alphabetOutput string.
+            // newOutput also adds a space to the beginning of the string so that we offset the position by 1.
+            // This makes it so that A isn't at position 0 and Z is at position 25.
+            let newOutput = alphabetOutput.replaceAll(',','').replaceAll(' ','').replace('A', ' A');
+            // .charAt takes the user value and finds the string attributed to that value.
+            let letter = newOutput.charAt(pos);
+            // This if else statement determines if the user input is valid and returns results based upon that determination.
+            if (letter === "") {
+                // In this case, the input is invalid so we unhide the results div and tell the user that it is invalid.
+                document.getElementById('results').style.display = "block";
+                document.getElementById('alphabet-letter').innerHTML = `There are not ${pos} letters in the alphabet`;
+            } else {
+                // In this case, the input is valid so we unhide the results div and tell the user what letter is in that position.
+                document.getElementById('results').style.display = "block";
+                document.getElementById('alphabet-letter').innerHTML = `${letter} is at position ${pos} in the alphabet`;
+            }
+        }
+    </script>
+</body>
+</html>
