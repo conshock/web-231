@@ -1,0 +1,81 @@
+<!--
+   Title: Shockley-javazon.html
+   Author: Conner Shockley
+   Date: 3/1/2021
+   Description: Webpage for card game.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Head for page with links to the course Google fonts, site global styling sheet, and the Shockley-sequence-game styling sheet. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB 231 - Enterprise Javascript I</title>
+<link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="Shockley-card-game.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="app-header">Welcome to the Card Game!</h1>
+        <div class="card">
+            <div class="card-title">Card Dealer</div>
+            <div class="form-field">
+                <button onclick="shuffle()" id="btnDealCards" class="btn btn-primary full-width">Deal Cards.</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Adding JavaScript to the Shockley-card-game.html file. -->
+    <script>
+        // Card class with face and suit parameters.
+        class Card {
+            constructor(face, suit) {
+                this.face = face;
+                this.suit = suit;
+            }
+        }
+
+        // Variable for card deck number.
+        let CARD_COUNT = 52;
+
+        // Deck class.
+        class Deck {
+            constructor() {
+                this.cards = [];
+            }
+                getDeckOfCards() {
+                    let faces = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+                    let suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+                    for (let count = 0; count < CARD_COUNT; count++) {
+                        this.cards[count] = (new Card(faces[count % 13], suits[count / 13]))
+                    }
+            }
+                 shuffle() {
+                     let firstCard = Card[0];
+                     for (let shuffleCount = 0; shuffleCount < CARD_COUNT; shuffleCount++) {
+                         // Under Exhibit A in document.
+                    }
+                }
+        }
+
+        let firstCard = new Card(1);
+      
+        const d = new Deck();
+        d.getDeckOfCards();       
+        console.log(d.cards); 
+
+    </script>
+
+</body>
+</html>

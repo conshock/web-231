@@ -4,18 +4,3 @@
     Date: 2.27/2021
     Description: Styling for the Shockley-alphabet-game.html page.
 */
-
-/* 
-    Changes the text size and alignment of the card-content class.
-*/
-.card-content {
-    font-size: 28px;
-    text-align: center;
-}
-
-/* 
-    Hides the results card initially.
-*/
-#results {
-    display: none;
-}
