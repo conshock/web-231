@@ -55,7 +55,6 @@
         let faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
         let suits = ["diamonds", "hearts", "spades", "clubs"];
         let deck = [];
-        let CARD_COUNT = 52;
 
         // This function creates the deck Array through nested for loops.
         function getDeckOfCards()
@@ -71,7 +70,7 @@
                 for(let faceCount = 0; faceCount < faces.length; faceCount++)
                 {
                     // In each iteration, a card object is created and pushed to the deck array with two parameters: face and suit.
-                    let card = {};
+                    card = {};
                     card.suit = suits[suitCount];
                     card.face = faces[faceCount];
 
@@ -83,7 +82,6 @@
             console.log(deck);
             return deck;
         }
-
 
 
         function shuffle()
@@ -99,31 +97,37 @@
             }
         }
 
+
         function buildPlayingCard(card, suitIcon, faceColor, suitColor){
             let cardFace;
+            let suit = deck[this.suit];
+            let face = deck[this.face];
             cardFace = `<div class='card player-card'>
                         <div class='card-title' style='color: ${faceColor}; font-size: 20px; padding-left: 10px'>
                             <div class='card-content' style='font-size: 28px; padding-bottom: 25px;'>
-                                <span style='color: ${suitColor}' class='${suitIcon}'></span>
+                                <span style='color: ${suitColor}' class='${suitIcon}'>${card}</span>
                             </div>
                         </div>
-                    </div> `;
+                        </div> `;
             return cardFace;
         }
+        
 
             function cardOutput() {
             let cardOutputWithIcon = '';
             // left at page 6 instruction f
-            for (i = 0; i < CARD_COUNT; i++) {
-                for (suit in deck[i]) {
-                    if (suit === 'hearts') {
-                        cardOutputWithIcon += buildPlayingCard('card', "mdi mdi-heart", "red", "red")
-                    } else if (suit === 'diamonds') {
-                        cardOutputWithIcon += buildPlayingCard('card', "mdi mdi-cards-diamond", "red", "red")
-                    } else if (suit === 'clubs') {
-                        cardOutputWithIcon += buildPlayingCard('card', "mdi mdi-cards-club", "black", "black")
+            let deck = deck;
+            let card = deck[this.card];
+            for (card in deck) {
+                for (suit in deck) {
+                    if (suit = 'hearts') {
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-heart", "red", "red")
+                    } else if (suit = 'diamonds') {
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-diamond", "red", "red")
+                    } else if (suit = 'clubs') {
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-club", "black", "black")
                     } else {
-                        cardOutputWithIcon += buildPlayingCard('card', "mdi mdi-cards-spade", "black", "black")
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-spade", "black", "black")
                     }
                     document.getElementById("player-cards").innerHTML = cardOutputWithIcon;  
                 } 

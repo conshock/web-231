@@ -7,4 +7,8 @@
 
 .player-card {
     text-align: center;
+    width: 20%;
+    padding: 10px;
+    height: 200px;
+    display: inline-block;
 }
